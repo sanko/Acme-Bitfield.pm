@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Added `inverse()` method to create a new bitfield with flipped bits.
+- Added `is_full()` and `is_empty()` methods for quick status checks.
+- Added bitwise set operations: `union( ... )`, `intersection( ... )`, and `difference( ... )`.
 
 ## [v1.0.0] - 2026-01-29
 
