@@ -71,6 +71,10 @@ Sets all bits within the C<size> to 1.
 
 Returns the index of the first bit set to 0, or C<undef> if all bits are set.
 
+=head2 C<inverse( )>
+
+Returns a new bitfield object with all bits within the C<size> inverted. Bit 0 becomes 1, and 1 becomes 0.
+
 =head1 AUTHOR
 
 Sanko Robinson E<lt>sanko@cpan.orgE<gt>

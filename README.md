@@ -69,6 +69,10 @@ Sets all bits within the `size` to 1.
 
 Returns the index of the first bit set to 0, or `undef` if all bits are set.
 
+## `inverse( )`
+
+Returns a new bitfield object with all bits within the `size` inverted. Bit 0 becomes 1, and 1 becomes 0.
+
 # AUTHOR
 
 Sanko Robinson <sanko@cpan.org>

@@ -28,7 +28,7 @@ class Acme::Bitfield v1.0.0 {
 
     method count () {
         my $c = 0;
-        for my $i ( 0 .. $size ) {
+        for my $i ( 0 .. $size - 1 ) {
             $c++ if $self->get($i);
         }
         $c;
@@ -48,6 +48,18 @@ class Acme::Bitfield v1.0.0 {
             return $i if !$self->get($i);
         }
         ();
+    }
+
+    method inverse () {
+        my $inverted = __CLASS__->new( size => $size );
+        my $new_data = ~.$data;
+
+        # Zero out excess bits at the end to match fill() logic
+        for ( my $i = $size; $i < length($new_data) * 8; $i++ ) {
+            vec( $new_data, _map($i), 1 ) = 0;
+        }
+        $inverted->set_data($new_data);
+        return $inverted;
     }
 };
 #
